@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-
-const userSchema = new mongoose.Schema({    // new means brand new object
+const userSchema = new mongoose.Schema({ 
     firstName: {
         type: String,
         required: true,
@@ -18,5 +17,4 @@ const userSchema = new mongoose.Schema({    // new means brand new object
         required: true,
     },
 });
-
 module.exports = mongoose.model("user", userSchema);

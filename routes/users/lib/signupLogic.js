@@ -1,22 +1,16 @@
 const { checkIsEmpty } = require("./methodAuth");
-
 const signupLogicInputIsEmpty = (req, res, next) => {
     let errorObj = {};
-
     const { firstName, lastName, email, password } = req.body;
-
     if (checkIsEmpty(firstName)) {
         errorObj.firstName = "First Name cannot be empty";
     }
-
     if (checkIsEmpty(lastName)) {
         errorObj.lastName = "Last Name cannot be empty";
     }
-
     if (checkIsEmpty(email)) {
         errorObj.email = "email cannot be empty";
     }
-
     if (checkIsEmpty(password)) { 
         errorObj.password = "password cannot be empty";
     }
@@ -32,8 +26,6 @@ const signupLogicInputIsEmpty = (req, res, next) => {
     next();
     }
 }
-
-
 module.exports = {
     signupLogicInputIsEmpty,
 };

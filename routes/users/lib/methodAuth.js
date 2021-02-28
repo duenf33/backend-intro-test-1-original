@@ -1,5 +1,4 @@
 const { matches, isEmpty, isEmail } = require("validator");
-
 function checkForSymbol(target) {
     if (matches(target, /[!@#$%^&*()\[\],.?“:{}|<>]/g)) {
         return true;
@@ -7,7 +6,6 @@ function checkForSymbol(target) {
         return false;
     }
 }
-
 function checkIsEmpty(target) {
     if (isEmpty(target)) {
         return true;
@@ -15,7 +13,6 @@ function checkIsEmpty(target) {
         return false;
     }
 }
-
 function checkIsEmail(target) {
     if (isEmail(target)) {
         return true;
@@ -23,7 +20,6 @@ function checkIsEmail(target) {
         return false;
     }
 }
-
 module.exports = {
     checkForSymbol,
     checkIsEmpty,

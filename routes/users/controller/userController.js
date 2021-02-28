@@ -1,7 +1,6 @@
 const bcrypt = require("bcryptjs");
 const User = require("../model/User");
 var axios = require("axios");
-
 module.exports = {
 	displayUsers: async (req, res) => {
 		try {
