@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<% include ./partials/head %>
+
+<body class="text-center">
+  
+  <% include ./partials/header %>
+
+  <div class="error-form">
+    <% if (error) { %>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <p> Please sign up to use this page <a href="/users/create-user">You can sign up here.</a> </p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <% } %>
+  </div>
+
+  <% include ./partials/scripts %>
+
+</body>
+</html>
