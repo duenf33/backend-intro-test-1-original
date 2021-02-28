@@ -1,6 +1,6 @@
 const{ matches, isStrongPassword } = require("validator");
 
-const { checkForSymbol, checkIsEmail } = require("./authMethods");
+const { checkForSymbol, checkIsEmail } = require("./methodAuth");
 
 function checkIfHaveNumber(target) {
     if (matches(target, /[0-9]/g)) {
@@ -10,7 +10,7 @@ function checkIfHaveNumber(target) {
     }
 };
 
-function checkSignupDataType(req, res, next) {
+function signupLogicDataType(req, res, next) {
     let errorObj = {}; 
 
     const { firstName, lastName, email, password } = req.body;
@@ -64,5 +64,5 @@ function checkSignupDataType(req, res, next) {
     }
 }
 module.exports = {
-    checkSignupDataType,
+    signupLogicDataType,
 }

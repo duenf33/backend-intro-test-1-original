@@ -29,13 +29,13 @@
         
   </div>
 
-  <h1>HOME PAGE</h1>
+  <h1>WEATHER PAGE</h1>
 
   <div class="container">
 
     <form method="POST" action="/users/home">
       <div class="input-group mb-3">
-        <input name="search" type="text" class="form-control" placeholder="Search Gifhy" aria-label="search" aria-describedby="search">
+        <input name="search" type="text" class="form-control" placeholder="City" aria-label="search" aria-describedby="search">
         <button class="btn btn-primary" type="submit" id="search">Search</button>
       </div>
     </form>
@@ -50,12 +50,10 @@
               <div class="card-body">
                 <h5 class="card-title"><%= item.name %></h5>
                 <ul>
-                  <li><%= item.main.temp %></li>
-                  <li><%= item.main.feels_like %></li>
-                  <li><%= item.main.temp_min %></li>
-                  <li><%= item.main.temp_max %></li>
-                  <li><%= item.coord.lat %></li>
-                  <li><%= item.coord.lon %></li>
+                  <li>overall temperature: <%= item.main.temp %>℉</li>
+                  <li>feels like: <%= item.main.feels_like %>℉</li>
+                  <li>minimum temperature: <%= item.main.temp_min %>℉</li>
+                  <li>maximum temperature: <%= item.main.temp_max %>℉</li>
                 </ul>
               </div>
             </div>

@@ -4,51 +4,51 @@ var axios = require("axios");
 // const bcrypt = require("./bcryptjs")
 // const User = require("./model/User");
 const {
-  getAllUsers,
-  sendToSignup,
-  sendToLogin,
-  getHome,
-  postHome,
+  displayUsers,
+  displaySignup,
+  displayLogin,
+  reqHome,
+  resHome,
   signup,
   login,
-  deleteUserByEmail,
-  deleteUserByID,
-  updateUserByID,
-  updateUserByEmail,
+  userDelByEmail,
+  userDelByID,
+  userByIDUpdate,
+  userByEmailUpdate,
   logout,
 } = require("./controller/userController");
 
-const { checkSignupInputIsEmpty } = require("./lib/checkSignup");
-const { checkSignupDataType } = require("./lib/checkSignupDataType");
+const { signupLogicInputIsEmpty } = require("./lib/signupLogic");
+const { signupLogicDataType } = require("./lib/signupLogicDataType");
 const { 
-  checkLoginEmptyMiddleware, 
+  loginLogicEmptyMiddleware, 
   checkEmailFormat, } 
-  = require("./lib/checkLogin");
+  = require("./lib/loginLogic");
 
 /* GET users listing. */
-router.get("/get-all-users", getAllUsers);
+router.get("/get-all-users", displayUsers);
 
-router.get("/create-user", sendToSignup);
+router.get("/create-user", displaySignup);
 
-router.get("/login", sendToLogin)
+router.get("/login", displayLogin)
 
-router.get("/home", getHome);
+router.get("/home", reqHome);
 
-router.post("/home", postHome);
+router.post("/home", resHome);
 //v4 async and await
-router.post("/create-user", checkSignupInputIsEmpty, checkSignupDataType, signup);
+router.post("/create-user", signupLogicInputIsEmpty, signupLogicDataType, signup);
 
-router.post("/login", checkLoginEmptyMiddleware, checkEmailFormat, login);
+router.post("/login", loginLogicEmptyMiddleware, checkEmailFormat, login);
 
-router.delete("/delete-user-by-id/:id", deleteUserByID);
+router.delete("/delete-user-by-id/:id", userDelByID);
 
-router.delete("/delete-user-by-email", deleteUserByEmail);
+router.delete("/delete-user-by-email", userDelByEmail);
 
 //update user by id
-router.put("/update-user-by-id/:id", updateUserByID);
+router.put("/update-user-by-id/:id", userByIDUpdate);
 
 //update user by email
-router.put("/update-user-by-email/", updateUserByEmail);
+router.put("/update-user-by-email/", userByEmailUpdate);
 
 router.get("/logout", logout);
 

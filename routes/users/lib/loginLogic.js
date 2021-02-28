@@ -1,6 +1,6 @@
-const { checkIsEmpty, checkIsEmail } = require("./authMethods.js");
+const { checkIsEmpty, checkIsEmail } = require("./methodAuth.js");
 
-function checkLoginEmptyMiddleware (req, res, next){
+function loginLogicEmptyMiddleware (req, res, next){
     let errorObj = {};
 
     let checkedEmail = false;
@@ -54,6 +54,6 @@ function checkEmailFormat(req, res, next) {
 }
 
 module.exports = {
-    checkLoginEmptyMiddleware,
+    loginLogicEmptyMiddleware,
     checkEmailFormat,
 }

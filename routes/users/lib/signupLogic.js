@@ -1,6 +1,6 @@
-const { checkIsEmpty } = require("./authMethods");
+const { checkIsEmpty } = require("./methodAuth");
 
-const checkSignupInputIsEmpty = (req, res, next) => {
+const signupLogicInputIsEmpty = (req, res, next) => {
     let errorObj = {};
 
     const { firstName, lastName, email, password } = req.body;
@@ -35,5 +35,5 @@ const checkSignupInputIsEmpty = (req, res, next) => {
 
 
 module.exports = {
-    checkSignupInputIsEmpty,
+    signupLogicInputIsEmpty,
 };
